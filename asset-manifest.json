@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/novoltage.github.io/To-do-List/static/css/main.7940d905.css",
-    "main.js": "/novoltage.github.io/To-do-List/static/js/main.8c0d63f9.js",
-    "index.html": "/novoltage.github.io/To-do-List/index.html",
-    "main.7940d905.css.map": "/novoltage.github.io/To-do-List/static/css/main.7940d905.css.map",
-    "main.8c0d63f9.js.map": "/novoltage.github.io/To-do-List/static/js/main.8c0d63f9.js.map"
+    "main.css": "/To-do-List/static/css/main.7940d905.css",
+    "main.js": "/To-do-List/static/js/main.8c0d63f9.js",
+    "index.html": "/To-do-List/index.html",
+    "main.7940d905.css.map": "/To-do-List/static/css/main.7940d905.css.map",
+    "main.8c0d63f9.js.map": "/To-do-List/static/js/main.8c0d63f9.js.map"
   },
   "entrypoints": [
     "static/css/main.7940d905.css",

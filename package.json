@@ -1,7 +1,7 @@
 {
+  "homepage": "novoltage.github.io/To-do-List/",
   "name": "todo",
   "version": "0.1.0",
-  "homepage": "https://novoltage.github.io/To-do-List/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.4",

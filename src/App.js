@@ -1,24 +1,89 @@
-import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from 'react';
+import { NewTodoForm } from './Components/NewTodoForm';
+import { TodoList } from './Components/TodoList';
+import { DeleteAll } from './Components/DeleteAll';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+
 
 function App() {
+  const [todos, setTodos] = useState(()=> {
+    const localValue = localStorage.getItem("ITEMS")
+    if(localValue == null) return[]
+
+    return JSON.parse(localValue)
+  })
+
+ useEffect(()=>{
+  localStorage.setItem("ITEMS", JSON.stringify(todos))
+ })
+
+
+  function AddTodo(title, dueDate) {
+    
+    setTodos(currentTodos => {
+      return [
+        ...currentTodos,
+        { id: crypto.randomUUID(), title , completed: false, dueDate }
+        ,
+      ]
+    }
+    )
+  }
+
+  // function Ddate(id, dueDate) {
+  //   setTodos(currentTodos => {
+  //     return currentTodos.map(todo => {
+  //       if (todo.id === id) {
+  //         return { ...todo, dueDate }
+  //       }
+
+  //       return todo
+  //     }
+  //     )
+  //   }
+  //   )
+  // }
+
+  function ToggleTodo(id, completed) {
+    setTodos(currentTodos => {
+      return currentTodos.map(todo => {
+        if (todo.id === id) {
+          return { ...todo, completed }
+        }
+
+        return todo
+      }
+      )
+    }
+    )
+  }
+
+function DeleteTodo(id){
+  setTodos(currentTodos => { 
+    return currentTodos.filter(todo => todo.id !==id)
+  })
+}
+ 
+function DeleteTodos(){
+  setTodos([])
+}
+console.log(todos)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+    <>
+    <section className='wrapper'>
+      <NewTodoForm onSubmit={AddTodo} />
+      <h1 className='header'>To do List </h1>
+      <TodoList todos={todos} ToggleTodo={ToggleTodo} DeleteTodo={DeleteTodo} />
+      <DeleteAll DeleteAll={DeleteTodos} todos={todos} />
+      
+      </section>
+      
+    </>
+    </LocalizationProvider>
   );
 }
 

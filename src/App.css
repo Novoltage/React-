@@ -194,6 +194,7 @@ body {
 .list-btn{
   font-size: 1.25rem;
   background: whitesmoke;
+  color: black;
   border: solid 1px;
   margin: .5rem;
   box-shadow: 6px 6px 3px 1px rgb(46, 46, 46);

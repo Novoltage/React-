@@ -1,90 +1,23 @@
 import './App.css';
-import { useEffect, useState } from 'react';
-import { NewTodoForm } from './Components/NewTodoForm';
-import { TodoList } from './Components/TodoList';
-import { DeleteAll } from './Components/DeleteAll';
-import { LocalizationProvider } from '@mui/x-date-pickers';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import { Home } from './Components/Switch/Home';
 
 
-function App() {
-  const [todos, setTodos] = useState(()=> {
-    const localValue = localStorage.getItem("ITEMS")
-    if(localValue == null) return[]
-
-    return JSON.parse(localValue)
-  })
-
- useEffect(()=>{
-  localStorage.setItem("ITEMS", JSON.stringify(todos))
- })
 
 
-  function AddTodo(title, dueDate) {
-    
-    setTodos(currentTodos => {
-      return [
-        ...currentTodos,
-        { id: crypto.randomUUID(), title , completed: false, dueDate }
-        ,
-      ]
-    }
-    )
-  }
+function App(){
 
-  // function Ddate(id, dueDate) {
-  //   setTodos(currentTodos => {
-  //     return currentTodos.map(todo => {
-  //       if (todo.id === id) {
-  //         return { ...todo, dueDate }
-  //       }
+return(
+<>
+<section >
+<Home/>
+</section>
 
-  //       return todo
-  //     }
-  //     )
-  //   }
-  //   )
-  // }
 
-  function ToggleTodo(id, completed) {
-    setTodos(currentTodos => {
-      return currentTodos.map(todo => {
-        if (todo.id === id) {
-          return { ...todo, completed }
-        }
 
-        return todo
-      }
-      )
-    }
-    )
-  }
 
-function DeleteTodo(id){
-  setTodos(currentTodos => { 
-    return currentTodos.filter(todo => todo.id !==id)
-  })
-}
- 
-function DeleteTodos(){
-  setTodos([])
-}
-console.log(todos)
+</>
 
-  return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-    <>
-    <section className='wrapper'>
-      <NewTodoForm onSubmit={AddTodo} />
-      <h1 className='header'>To do List </h1>
-      <TodoList todos={todos} ToggleTodo={ToggleTodo} DeleteTodo={DeleteTodo} />
-      <DeleteAll DeleteAll={DeleteTodos} todos={todos} />
-      
-      </section>
-      
-    </>
-    </LocalizationProvider>
-  );
+)
 }
 
 export default App;

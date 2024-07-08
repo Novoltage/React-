@@ -1,7 +1,20 @@
+@font-face {
+  font-family: 'playwrite_au_saregular';
+  src: url('../public/font/webfontkit-20240708-110258/playwriteausa-variablefont_wght-webfont.woff2') format('woff2'),
+       url('../public/font/webfontkit-20240708-110258/playwriteausa-variablefont_wght-webfont.woff') format('woff')
+       url('../public/font/webfontkit-20240708-110258/PlaywriteAUSA-VariableFont_wght.ttf') format('ttf');
+
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
 * {
-  font-family: monospace;
+  font-family: 'playwrite_au_saregular';
   box-sizing: border-box;
 }
+
 
 body {
   background-image: linear-gradient(to right top, #22507d, #446d95, #658aac, #86a9c4, #aac8dd, #b5d7e6, #c2e6ef, #d2f5f7, #d3f6eb, #dcf5de, #ecf2d1, #ffedcb);

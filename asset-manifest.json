@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/To-do-List/static/css/main.e8ac1014.css",
+    "main.css": "/To-do-List/static/css/main.d6c3da59.css",
     "main.js": "/To-do-List/static/js/main.518ca66a.js",
+    "static/media/PlaywriteAUSA-VariableFont_wght.ttf": "/To-do-List/static/media/PlaywriteAUSA-VariableFont_wght.48f018a0c74f72d2ca9d.ttf",
+    "static/media/playwriteausa-variablefont_wght-webfont.woff": "/To-do-List/static/media/playwriteausa-variablefont_wght-webfont.f261941bd4e6cbd0afd5.woff",
+    "static/media/playwriteausa-variablefont_wght-webfont.woff2": "/To-do-List/static/media/playwriteausa-variablefont_wght-webfont.6f8883c478a82ded73a5.woff2",
     "index.html": "/To-do-List/index.html",
-    "main.e8ac1014.css.map": "/To-do-List/static/css/main.e8ac1014.css.map",
+    "main.d6c3da59.css.map": "/To-do-List/static/css/main.d6c3da59.css.map",
     "main.518ca66a.js.map": "/To-do-List/static/js/main.518ca66a.js.map"
   },
   "entrypoints": [
-    "static/css/main.e8ac1014.css",
+    "static/css/main.d6c3da59.css",
     "static/js/main.518ca66a.js"
   ]
 }
